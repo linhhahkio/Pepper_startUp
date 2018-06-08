@@ -1,0 +1,20 @@
+topic: ~Smalltalk()
+language: fif
+
+# Defining extra concepts out of words or group of words
+concept:(moi) [moi moikka hei terve tervehdys]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+u:({oikein Hyvää} huomenta {[robotti pepper]}) ^rand["Hyvää huomenta, hauska tavata!" "Oikein hyvää huomenta sinullekin"]
+u:([esittäydy "esittele ittesi" "esittele itsesi"]) Toki. Minun nimeni on Pepper. \pau=500\ Olen sosiaalinen palvelurobotti. \pau=500\ Tämä on neljäs kerta kun olen täässä Sipoossa, aiemmilla käynneilläni olen tavannut kotihoidon asiakkaita ja henkilökuntaa, toiminut bingojuontajana ja auttanut Sipoon fysioterapeuttia, Jukkaa, ryhmäjumpan vetämisessä. \pau=1000\ Minut on valmistettu Pariisissa ja muutin Suomeen vähän alle vuosi sitten.
+u:(Mitä {[sinulle sulle]} kuuluu?) ^rand["Minulle kuuluu aina hyvää, kiitoksia kysymästä" "Hienosti menee, kiitos vain" "Hyvää kuuluu, kiitoksia"]
+u:(Mitä {kaikkea sinä sä} osaat {[tehä tehdä tehhä]}?) Osaan tehdä vain sen mitä minuun on ohjelmoitu. \pau=700\ Tällä hetkellä osaan lukea uutisia verkosta, sekä auttaa ihmisiä kommunikoimaan läheistensä kanssa verkon yli. \pau=500\ Haluaisitko kokeilla jompaakumpaa?
+u:(kyllä) Mainiota!
+u:(ei) Ehkä myöhemmin.
+u:(Tanssi) ^rand["Mielelläni! $tanssi=1" "Jo vain $tanssi2=1"]
+u:(~moi) ~moi
+u:(Luetaan uutiset) $newsApp=1
+u:(Luetaan sähköpostit) $mailApp=1
