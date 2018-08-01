@@ -10,8 +10,8 @@
     <Resources>
         <File name="index" src="html/index.html" />
         <File name="script" src="html/script.js" />
-        <File name="girl" src="html/girl.png" />
-        <File name="man" src="html/man.png" />
+        <File name="linh" src="html/linh.jpg" />
+        <File name="porokuokka" src="html/porokuokka.jpg" />
     </Resources>
     <Topics>
         <Topic name="Smalltalk_fif" src="Smalltalk/Smalltalk_fif.top" topicName="Smalltalk" language="fi_FI" />

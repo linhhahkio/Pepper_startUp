@@ -1,0 +1,39 @@
+This is a start up application which initially run and can call others application. 
+Program's flow:
+
+1. "Stop behavior" box: stop any running behaviors except fromt our program to prevent conflict.
+2. Using other applications through dialog
+- "Start behavior" box: Start the background application ( which continuing checking for new mails and show the face of users that have new mails)
+- "Smalltalk" box: Activate dialog to interact with users. Topic including:
+	+ Greeting 
+	+ Brief self-introduction
+	+ Dance/ Play music
+	+ Read news
+	+ Read email
+3. Each of the topic triggers corresponding answers and possible output from the "Smalltalk" box.
+	3.1 Dance/ Play music -> output "tanssi" and "tanssi2"
+		"tanssi" -> Saxophone box
+		"tanssi2" -> Air guitar box
+	3.2 Read news -> output "newsApp" -> "Stop behavior" box (stop background behavior) -> "Hide web view" box (hide the web view showing by the background app) -> "Start News App" box (start the news application) 
+	* "Wait for signal" box making sure the background app stop before starting "News" application
+	3.3 Read email -> output "mailApp" 
+	-> "Face recog." box (identify which user to open their correct mail box).
+		3.3.1 Pepper recognizes someone 
+		* If one user is recognized -> output "onRecognizedFace" returns the name of recognized user
+		* If multiple users are recognized -> output "onRecognizedFaces" return the name of the recognized users -> "show" box shows the picture of users that it recognized on the tablet then "Say text" asking the name of user want to log in -> "Speech Recog." catch the given name and returns the single name.
+		
+		- Both of these 2 cases then connect to "Insert Data" box to put the user name into temp memory so it can be accessed by "Email Application" later -> "Start Email App" box 
+		- When the process of Email Application end and output of "Start Email App" box is trigger -> "Wait" box wait for 3 secs -> "Face Detection" box detects if there is still someone using it
+		* If no human detected -> "Wait" box wait for 1 sec and return to the beginning of the flow
+		* If a human or humans detected -> "Face Reco." box checks if it is still the same user
+			+ If one person is recognized -> output "onRecognizedFace" returns the name of recognized user -> "Check if same person" box compares the name of this person with the previous name that log in
+				.If the person stay the same -> start "Face Detecion" box again : This keeps looping until the user leaves or someone new comes in
+				.If the person is different -> output "onDiff" is trigger -> "Wait" box waits for 2 secs and starts the flow again from the beginning
+			+ if multiple people are recognized or nobody is recognized -> "Wait" box waits for 2 secs and starts the flow again from the beginning 
+		
+		3.3.2 Pepper cannot recognize anyone
+		-> output "onDetectWithoutReco" -> "Say" box inform user that it recognized nobody -> Starts the flow again from the beginning
+
+ 
+    
+	

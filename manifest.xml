@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package version="0.0.0" uuid="start_up-af8608">
+<package uuid="start_up-af8608" version="0.0.0">
  <names>
   <name lang="en_US">start_up</name>
  </names>
@@ -18,8 +18,6 @@
    <triggerSentences>
     <sentence lang="en_US">start up</sentence>
    </triggerSentences>
-   <loadingResponses/>
-   <autonomous/>
    <permissions/>
   </behaviorContent>
  </contents>
